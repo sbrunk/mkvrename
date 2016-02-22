@@ -16,7 +16,7 @@ object Main {
   case class Episode(number: Int, title: String)
 
   def escapeChars(name: String): String =
-    name.replaceAll("[. /]+", "_").stripSuffix("_")
+    name.replaceAll("[., /]+", "_").stripSuffix("_")
 
   def formatName(seriesTitle: String, season: Int, episode: Int, episodeTitle: String): String = {
     f"${escapeChars(seriesTitle)}%s_S$season%dE$episode%02d_${escapeChars(episodeTitle)}%s.mkv"
